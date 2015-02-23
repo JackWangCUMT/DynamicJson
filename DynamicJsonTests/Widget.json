@@ -1,0 +1,28 @@
+﻿{
+  "widget": {
+    "debug": "on",
+    "window": {
+      "title": "A window",
+      "name": "window",
+      "width": 250,
+      "height": 100
+    },
+    "web": {
+      "image": {
+        "src": "Images/Sun.png",
+        "name": "sun1",
+        "hOffset": 250,
+        "vOffset": 200,
+        "alignment": "center"
+      }
+    },
+    "text": {
+      "data": "User Info",
+      "size": 6,
+      "style": "bold",
+      "name": "info",
+      "hOffset": 20,
+      "vOffset": 10,
+    }
+  }
+}
