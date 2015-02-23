@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DynamicJson;
+using Xunit;
+using Xunit.Should;
 
 namespace DynamicJsonTests
 {
-    class DynamicParseTest
+    public class DynamicParseTest : JsonResourceBase
     {
+        [Fact]
+        public void ParseImage_ShouldReturnImageObject()
+        {
+            string json = GetJson("Widget.json");
+
+            var image = DynamicParse.Parse(json);
+
+            image.Name.ShouldBe("sun1");
+            image.Src.ShouldBe("Images/Sun.png");
+            image.HOffset.ShouldBe(250);
+            image.VOffset.ShouldBe(200);
+            image.Alignment.ShouldBe("center");
+        }
     }
 }

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace DynamicJsonTest
+namespace DynamicJsonTests
 {
     public class JsonResourceBase
     {
@@ -10,16 +10,16 @@ namespace DynamicJsonTest
         {
             var resource =
                 Assembly.GetExecutingAssembly()
-                        .GetManifestResourceStream("DynamicJsonTest." + resourceName);
+                        .GetManifestResourceStream("DynamicJsonTests." + resourceName);
 
             Debug.Assert(resource != null, "resource != null");
 
             return resource;
         }
 
-        protected string GetJson(string resourse)
+        protected string GetJson(string resource)
         {
-            using (var reader = new StreamReader(GetResourceStream(resourse)))
+            using (var reader = new StreamReader(GetResourceStream(resource)))
             {
                 var json = reader.ReadToEnd();
                 return json;
