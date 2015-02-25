@@ -14,14 +14,14 @@ namespace DynamicJson
 
             foreach (dynamic imgObject in jsonObject.widget.web.image)
             {
-                dynamic image = JValue.Parse(imgObject.ToString());
+                dynamic image = JToken.Parse(imgObject.ToString());
 
                 images.Add(
                     new NewImage
-                        {
-                            ImageName = image.name,
-                            Source = image.src
-                        }
+                    {
+                        ImageName = image.name,
+                        Source = image.src
+                    }
                     );
             }
 
